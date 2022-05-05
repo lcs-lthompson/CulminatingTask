@@ -21,10 +21,8 @@ import CanvasGraphics
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
 
 // Create a turtle that can draw upon the canvas
-let turtle = Tortoise(drawingUpon: canvas)
+let t = Tortoise(drawingUpon: canvas)
 
-// Create a pen that can draw upon the canvas
-let p = Pen(drawingUpon: canvas)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
@@ -40,9 +38,6 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -56,22 +51,44 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
+// Scale
+let scale = 20
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// Get into position
+t.penUp()
+t.left(by: 90)
+t.forward(steps: 5 * scale)
+t.right(by: 90)
+t.penDown()
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+//plan to draw an arrow
 
-// Go back to origin
-p.goToOrigin()
+t.forward(steps: 3 * scale)
+t.right(by: 90)
+t.forward(steps: 1 * scale)
+t.left(by: 135)
+t.forward(steps: Int(2.0 * sqrt(2.0) * Double(scale)))
+t.left(by: 90)
+t.forward(steps:Int (2.0 * sqrt(2.0) * Double(scale)))
+t.left(by: 135)
+t.forward(steps: 1 * scale)
+t.right(by: 90)
+t.forward(steps: 3 * scale)
+t.left(by: 90)
+t.forward(steps: 2 * scale)
+t.left(by: 90)
+t.penUp()
+//finsihed
 
-// Change the pen color
-p.penColor = .red
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+
+
+
+
+
+
+
+
 
 /*:
  ## Show the Live View
