@@ -38,47 +38,67 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
+func drawArrow() {
+    //plan to draw an arrow
+    t.currentPosition()
+    t.currentHeading()
+
+    t.forward(steps: 3 * scale)
+    t.right(by: 90)
+    t.forward(steps: 1 * scale)
+    t.left(by: 135)
+    t.forward(steps: Int(2.0 * sqrt(2.0) * Double(scale)))
+    t.left(by: 90)
+    t.forward(steps:Int (2.0 * sqrt(2.0) * Double(scale)))
+    t.left(by: 135)
+    t.forward(steps: 1 * scale)
+    t.right(by: 90)
+    t.forward(steps: 3 * scale)
+    t.left(by: 90)
+    t.forward(steps: 2 * scale)
+    t.left(by: 90)
+    t.penUp()
+
+    t.currentPosition()
+    t.currentHeading()
+    //finsihed
+    
+}
+
+func moveOverForNewArrow(){
+    t.penUp()
+    t.forward(steps: 5 * scale)
+    t.penDown()
+}
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
 
-/*:
- ## Add your code
- 
- Beginning on line 61, you can add your own code.
-  
- [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
- */
 
 // Scale
 let scale = 20
 
-// Get into position
+
+// Get into starting position
 t.penUp()
 t.left(by: 90)
 t.forward(steps: 5 * scale)
 t.right(by: 90)
 t.penDown()
 
-//plan to draw an arrow
 
-t.forward(steps: 3 * scale)
-t.right(by: 90)
-t.forward(steps: 1 * scale)
-t.left(by: 135)
-t.forward(steps: Int(2.0 * sqrt(2.0) * Double(scale)))
-t.left(by: 90)
-t.forward(steps:Int (2.0 * sqrt(2.0) * Double(scale)))
-t.left(by: 135)
-t.forward(steps: 1 * scale)
-t.right(by: 90)
-t.forward(steps: 3 * scale)
-t.left(by: 90)
-t.forward(steps: 2 * scale)
-t.left(by: 90)
-t.penUp()
-//finsihed
+
+// move to position
+
+for _ in 1...6 {
+    // draw an arrow
+    drawArrow()
+    moveOverForNewArrow()
+}
+
+
+
+
 
 
 
