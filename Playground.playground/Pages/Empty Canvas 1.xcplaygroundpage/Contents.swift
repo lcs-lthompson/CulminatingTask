@@ -82,7 +82,7 @@ let scale = 20
 // Get into starting position
 t.penUp()
 t.left(by: 90)
-t.forward(steps: 5 * scale)
+t.forward(steps: 1 * scale)
 t.right(by: 90)
 t.penDown()
 
@@ -96,9 +96,36 @@ for _ in 1...6 {
     moveOverForNewArrow()
 }
 
+//get into position for the second row
 
 
+for _ in 1...7{
+t.penUp()
+    t.right(by: 180)
+    t.forward(steps: 35 * scale)
+    t.right(by: 90)
+    t.forward(steps: 4 * scale)
+    t.right(by: 90)
 
+for _ in 1...7 {
+    // draw an arrow
+    drawArrow()
+    moveOverForNewArrow()
+}
+
+//    t.penUp()
+//    t.forward(steps: 6 * scale)
+//    t.right(by: 90)
+//    t.forward(steps: 2 * scale)
+//    t.right(by: 90)
+//
+//    for _ in 1...7 {
+//        // draw an arrow
+//        drawArrow()
+//        moveOverForNewArrow()
+//    }
+    
+}
 
 
 
