@@ -2,11 +2,6 @@
 //: # Introduction
 //:
 //: This is a playground that will let you draw shapes and other graphics easily.
-/*:
- ## Canvas size
- 
- Set the size of your desired canvas by adjusting the constants on lines 10 and 11.
- */
 let preferredWidth = 300
 let preferredHeight = 600
 /*:
